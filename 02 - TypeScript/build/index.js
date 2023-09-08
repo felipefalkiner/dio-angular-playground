@@ -1,14 +1,28 @@
 "use strict";
-function addNumber(x, y) {
-    return x + y;
+const bot1 = {
+    id: "5",
+    name: "Falkobo"
+};
+const bot2 = {
+    id: 3,
+    name: "Falkobo",
+    sayHello: function () {
+        throw new Error("Function not implemented.");
+    }
+};
+bot1.name = "Falkobo v2";
+console.log(bot1);
+console.log(bot2);
+console.log("----------");
+class Robozao {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    sayHello() {
+        return `salveee ${this.name}`;
+    }
 }
-function addToHello(name) {
-    return `Hello ${name}`;
-}
-function callToPhone(phone) {
-    return phone;
-}
-let soma = addNumber(4, 7);
-console.log(soma);
-console.log(addToHello("Falk"));
-console.log(callToPhone("551122222222a"));
+const Robozin = new Robozao(1, "FALKZORD");
+console.log(Robozin);
+console.log(Robozin.sayHello());
