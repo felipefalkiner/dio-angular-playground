@@ -1,28 +1,23 @@
 "use strict";
-const bot1 = {
-    id: "5",
-    name: "Falkobo"
-};
-const bot2 = {
-    id: 3,
-    name: "Falkobo",
-    sayHello: function () {
-        throw new Error("Function not implemented.");
+class Character {
+    constructor(name, strength, skill) {
+        this.strength = strength;
+        this.skill = skill;
     }
-};
-bot1.name = "Falkobo v2";
-console.log(bot1);
-console.log(bot2);
-console.log("----------");
-class Robozao {
-    constructor(id, name) {
-        this.id = id;
+    attack() {
+        console.log(`Attack with ${this.strength} points`);
+    }
+    doAttack() {
+        console.log("doAttack is called");
+        this.attack();
+    }
+    setName(name) {
         this.name = name;
     }
-    sayHello() {
-        return `salveee ${this.name}`;
-    }
 }
-const Robozin = new Robozao(1, "FALKZORD");
-console.log(Robozin);
-console.log(Robozin.sayHello());
+const char1 = new Character("Falkzin", 10, 99);
+console.log(char1);
+char1.setName("Falk");
+console.log("---- NAME SET ----");
+console.log(char1);
+char1.doAttack();
