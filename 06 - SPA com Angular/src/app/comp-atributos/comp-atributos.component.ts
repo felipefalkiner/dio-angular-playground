@@ -9,6 +9,8 @@ export class CompAtributosComponent implements OnInit {
 
   constructor() { }
   style:string = 'disable'
+  corFundo:string = 'red'
+  corDaFonte:string = 'white'
 
   ngOnInit(): void {
   }
