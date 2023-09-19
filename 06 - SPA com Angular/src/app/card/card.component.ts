@@ -21,6 +21,11 @@ export class CardComponent implements OnInit {
     this.produtos.push("falk")
   }
 
+  remover(index:number){
+    // alert(index)
+    this.produtos.splice(index, 1)
+  }
+
   ngOnInit(): void {
   }
 
