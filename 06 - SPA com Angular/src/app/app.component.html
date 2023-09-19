@@ -1,6 +1,7 @@
 <app-card *ngIf="true"></app-card>
 <hr>
-<app-card *ngIf="false"></app-card>
+<!-- get value from app.components.ts -->
+<app-card *ngIf="isAliveCard"></app-card>
 <hr>
 
 <router-outlet></router-outlet>
