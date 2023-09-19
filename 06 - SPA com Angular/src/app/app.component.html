@@ -1,7 +1,14 @@
 <app-card *ngIf="true"></app-card>
 <hr>
+
 <!-- get value from app.components.ts -->
-<app-card *ngIf="isAliveCard"></app-card>
+<app-card *ngIf="isAliveCard; else anotherBlock"></app-card>
 <hr>
+
+<ng-template #anotherBlock>
+  <p>olá, sou um bloco secreto
+  e sou exibido quando o isAliveCard
+  é false! :D</p>
+</ng-template>
 
 <router-outlet></router-outlet>
