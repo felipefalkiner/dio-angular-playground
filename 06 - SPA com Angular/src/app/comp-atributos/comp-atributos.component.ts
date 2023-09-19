@@ -11,6 +11,17 @@ export class CompAtributosComponent implements OnInit {
   style:string = 'disable'
   corFundo:string = 'red'
   corDaFonte:string = 'white'
+  item:string = ''
+  lista:string[] = []
+
+  adicionarLista(){
+    if(this.item != "") {
+      this.lista.push(this.item)
+      this.item = ''
+    } else {
+      alert('Escreva o item a ser adicionado!')
+    }
+  }
 
   ngOnInit(): void {
   }

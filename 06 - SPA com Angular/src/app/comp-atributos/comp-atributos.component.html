@@ -1,3 +1,13 @@
 <p [ngClass]="style">comp-atributos works!</p>
 <button (click)="trocar()">Change Style</button>
 <h1 [ngStyle]="{'background':corFundo, 'color':corDaFonte}">CURSO ANGULAR</h1>
+
+<h1>Lista de Compras</h1>
+<label for="item">Adiciona um Item: </label>
+<input id="item" type="text" [(ngModel)]="item">
+<button (click)="adicionarLista()">ADICIONAR</button>
+<p>{{ item }}</p>
+
+<ul>
+    <li *ngFor="let elemento of lista">{{elemento}}</li>
+</ul>
