@@ -5,8 +5,8 @@ import { CardComponent } from './pages/portfolio/card/card.component';
 
 const routes: Routes = [
   {path:"", component:TitleComponent, pathMatch:'full'},
-  {path:"**", redirectTo:''}, // you can use this for 404 page for example
   {path:"portfolio", component:CardComponent, pathMatch:'prefix'},
+  {path:"**", redirectTo:''}, // you can use this for 404 page for example
 ];
 
 @NgModule({
