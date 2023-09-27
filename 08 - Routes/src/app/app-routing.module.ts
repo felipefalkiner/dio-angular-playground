@@ -5,8 +5,10 @@ import { CardComponent } from './pages/portfolio/card/card.component';
 
 const routes: Routes = [
   {path:"", component:TitleComponent, pathMatch:'full'},
-  {path:"portfolio", component:CardComponent},
-  {path:"portfolio/:id", component:CardComponent},
+  {path:"portfolio", component:CardComponent,children:[
+    {path:":id", component:CardComponent},
+    {path:":id/:user", component:CardComponent},
+  ]},
   {path:"**", redirectTo:''}, // you can use this for 404 page for example
 ];
 
