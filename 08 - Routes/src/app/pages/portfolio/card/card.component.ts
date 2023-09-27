@@ -19,6 +19,12 @@ export class CardComponent implements OnInit {
     // Route Params
     // http://localhost:4200/portfolio/{5}
     this.routerParams.params.subscribe( res => console.log(res))
+
+    // Route Children Params
+    // http://localhost:4200/portfolio/{5}
+    this.routerParams.firstChild?.params.subscribe( res => console.log(res))
+
+    
    }
 
   ngOnInit(): void {

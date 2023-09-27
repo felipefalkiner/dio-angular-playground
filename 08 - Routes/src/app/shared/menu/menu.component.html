@@ -9,5 +9,13 @@
                 [routerLink]="['/portfolio']"
                 [routerLinkActive]="['activated']"
                 [routerLinkActiveOptions]="{exact: true}">Portfolio</a></li>
+        <li><a 
+                [routerLink]="['/portfolio/5/falk']"
+                [routerLinkActive]="['activated']"
+                [routerLinkActiveOptions]="{exact: true}">Portfolio Children</a></li>
+        <li><a 
+                [routerLink]="['/portfolio/5/falk?user=Falksen&token=123']"
+                [routerLinkActive]="['activated']"
+                [routerLinkActiveOptions]="{exact: true}">Portfolio Children With Query</a></li>
     </ul>
 </div>
