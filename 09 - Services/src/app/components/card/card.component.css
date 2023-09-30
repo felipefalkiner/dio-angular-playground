@@ -46,6 +46,7 @@
 .type {
     /*  */
     color:white;
+    font-weight: bold;
     background-color: coral;
     padding: 5px;
     margin-right: 3px;
