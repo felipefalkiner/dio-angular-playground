@@ -18,28 +18,36 @@ export class CardComponent implements OnInit {
     types:[]
   }
 
-  id:number = 0
-  name:string = '';
-  attributesTypes:string[] = []
-  picture:string = ''
-
-
   constructor(private service:PokemonService) {}
 
-  ngOnInit(): void {
-    this.service.getPokemon("pikachu").subscribe(
-    {
-      next: (res) => {
-        this.pokemon = {
-          id: res.id,
-          name: res.name,
-          sprites: res.sprites,
-          types: res.types,
+  ngOnInit(): void {  
+    this.getPokemon("pikachu")
+  }
+
+  getPokemon(searchName:string){
+    this.service.getPokemon(searchName.toLowerCase()).subscribe(
+      {
+        next: (res) => {
+          this.pokemon = {
+            id: res.id,
+            name: res.name,
+            sprites: res.sprites,
+            types: res.types,
+          }
+          console.log(this.pokemon)
+        },
+        error: (err) => {
+          this.pokemon = {
+            id: 0,
+            name: "Not Found",
+            sprites: {
+              front_default: ''
+            },
+            types: []
+          }
+          console.log(err)
         }
-        console.log(this.pokemon)
-      },
-      error: (err) => console.log(err)
-    })
+      })
   }
 
 }

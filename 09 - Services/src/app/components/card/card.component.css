@@ -50,3 +50,8 @@
   border-radius: 5px;
   text-transform: capitalize;
 }
+
+.card input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
