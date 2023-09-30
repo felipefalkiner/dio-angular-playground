@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonData } from 'src/app/models/pokemonData';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -8,16 +9,36 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class CardComponent implements OnInit {
 
-  name:string = 'Bulbassaur';
-  attributesTypes:string[] = ['Fire', 'Dragon']
-  picture:string = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png'
+  pokemon:PokemonData = {
+    id:0,
+    name:'',
+    sprites:{
+      front_default: ''
+    },
+    types:[]
+  }
+
+  id:number = 0
+  name:string = '';
+  attributesTypes:string[] = []
+  picture:string = ''
 
 
   constructor(private service:PokemonService) {}
 
   ngOnInit(): void {
-    this.service.getPokemon("charmander").subscribe({
-      next: (res) => console.log(res)
+    this.service.getPokemon("pikachu").subscribe(
+    {
+      next: (res) => {
+        this.pokemon = {
+          id: res.id,
+          name: res.name,
+          sprites: res.sprites,
+          types: res.types,
+        }
+        console.log(this.pokemon)
+      },
+      error: (err) => console.log(err)
     })
   }
 
